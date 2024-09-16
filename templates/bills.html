@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Bills {% endblock %}</h1>
+    <div class="content">
+        {% for bill in bills %}
+            <div class="bill">
+                <p><b>#{{ bill.id }}</b></p>
+                <b>
+                    <p class="id">
+                        <a href="{{ url_for('bill', bill_id=bill.id)}}">
+                            {{ bill.id }}
+                        </a>
+                    </p>
+                </b>
+                <p>{{ bill.bill_date }}</p>
+                <p>{{ bill.bill_reading }}</p>
+                <p>{{ bill.meter_date }}</p>
+                <p>{{ bill.meter_reading }}</p>
+                <p>{{ bill.estimated_reading }}</p>
+                <p>{{ bill.estimated_bill }}</p>
+                <a href="{{ url_for('edit', bill_id=bill.id) }}">Edit</a>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

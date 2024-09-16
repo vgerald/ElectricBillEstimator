@@ -1,0 +1,7 @@
+FastAPI~=0.112.0
+Union
+BaseModel
+pydantic~=2.8.2
+sqlmodel~=0.0.21
+Flask~=3.0.3
+SQLAlchemy~=2.0.32

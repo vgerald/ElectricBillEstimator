@@ -1,0 +1,92 @@
+[
+    {
+        "bill_date": "2024-05-01",
+        "bill_reading": 1000,
+        "estimated_bill": 300000.0,
+        "estimated_reading": 3000,
+        "id": 1,
+        "meter_date": "2024-08-18",
+        "meter_reading": 4000
+    },
+    {
+        "bill_date": "2024-05-01",
+        "bill_reading": 1000,
+        "estimated_bill": 30.0,
+        "estimated_reading": 3000,
+        "id": 2,
+        "meter_date": "2024-08-18",
+        "meter_reading": 4000
+    },
+    {
+        "bill_date": "2024-06-01",
+        "bill_reading": 2000,
+        "estimated_bill": 20.0,
+        "estimated_reading": 2000,
+        "id": 3,
+        "meter_date": "2024-08-18",
+        "meter_reading": 4000
+    },
+    {
+        "bill_date": "2024-07-01",
+        "bill_reading": 3000,
+        "estimated_bill": 10.0,
+        "estimated_reading": 1000,
+        "id": 4,
+        "meter_date": "2024-08-18",
+        "meter_reading": 4000
+    },
+    {
+        "bill_date": "2024-06-18",
+        "bill_reading": 2000,
+        "estimated_bill": 12.0,
+        "estimated_reading": 1200,
+        "id": 5,
+        "meter_date": "2024-07-18",
+        "meter_reading": 3200
+    },
+    {
+        "bill_date": "2024-07-19",
+        "bill_reading": 3200,
+        "estimated_bill": 10.0,
+        "estimated_reading": 1000,
+        "id": 6,
+        "meter_date": "2024-08-18",
+        "meter_reading": 4200
+    },
+    {
+        "bill_date": "2024-07-19",
+        "bill_reading": 3200,
+        "estimated_bill": 3.0,
+        "estimated_reading": 300,
+        "id": 7,
+        "meter_date": "2024-08-18",
+        "meter_reading": 3500
+    },
+    {
+        "bill_date": "2024-06-19",
+        "bill_reading": 2200,
+        "estimated_bill": 3.0,
+        "estimated_reading": 300,
+        "id": 11,
+        "meter_date": "2024-07-18",
+        "meter_reading": 2500
+    },
+    {
+        "bill_date": "2024-05-19",
+        "bill_reading": 1200,
+        "estimated_bill": 7.0,
+        "estimated_reading": 700,
+        "id": 12,
+        "meter_date": "2024-06-18",
+        "meter_reading": 1900
+    },
+    {
+        "bill_date": "2024-06-19",
+        "bill_reading": 1500,
+        "estimated_bill": 6.0,
+        "estimated_reading": 600,
+        "id": 13,
+        "meter_date": "2024-07-18",
+        "meter_reading": 2100
+    }
+]

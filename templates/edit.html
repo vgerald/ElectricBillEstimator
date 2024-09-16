@@ -1,0 +1,106 @@
+
+
+<script>
+function setWarning(elementName) {
+    console.log("element passed to setWarning function is ", elementName);
+    var input = document.getElementsByName(elementName);
+    document.querySelector(elementName).focus();
+}
+
+function updateEstimatedReading() {
+
+    console.log("inside updateEstimatedReading function");
+    var billReading = parseInt(document.getElementsByName("bill_reading")[0].value);
+    console.log("Bill reading is " + billReading);
+    var meterReading = parseInt(document.getElementsByName("meter_reading")[0].value);
+    console.log("Meter reading is " + meterReading);
+
+    // to make sure that they are numbers
+    if (!estimatedReading) { estimatedReading = 0; }
+
+    var estimatedReading = parseInt(document.getElementsByName("estimated_reading")[0].value);
+    estimatedReading = meterReading - billReading;
+    if (estimatedReading < 0) {
+        alert("Bill Reading cannot be more than Meter Reading.");
+        setWarning("bill_reading");
+    }
+    else {
+        console.log("Estimated Reading Calculated as " + estimatedReading);
+        document.getElementsByName("estimated_reading")[0].value = estimatedReading;
+    }
+}
+</script>
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="width: 100%">
+        {% block title %} Edit {{ bill.id }} Details
+        {% endblock %}
+    </h1>
+    <form method="post">
+        <p>
+            <label for="id">Identity</label>
+            <input type="number" name="id"
+                   value={{ bill.id }}
+                   placeholder="Id" readonly style="background-color: grey;">
+            </input>
+        </p>
+        <p>
+            <label for="bill_date">Bill Date</label>
+            <input type="date" name="bill_date"
+                   value={{ bill.bill_date }}
+                   placeholder="Bill Date" required>
+            </input>
+        </p>
+        <p>
+            <label for="bill_reading">Bill Reading</label>
+            <input type="number" name="bill_reading"
+                   value={{ bill.bill_reading }}
+                   placeholder="Bill Reading" required onchange="updateEstimatedReading()">
+            </input>
+        </p>
+        <p>
+            <label for="meter_date">Meter Date</label>
+            <input type="date" name="meter_date"
+                   value={{ bill.meter_date }}
+                   placeholder="Meter Date" required>
+            </input>
+        </p>
+        <p>
+            <label for="meter_reading">Meter Reading</label>
+            <input type="number" name="meter_reading"
+                   value={{ bill.meter_reading }}
+                   placeholder="Meter Reading"  required onchange="updateEstimatedReading()">
+            </input>
+        </p>
+        <p>
+            <label for="estimated_reading">Estimated Reading</label>
+            <input type="number" name="estimated_reading"
+                   value={{ bill.estimated_reading }}
+                   placeholder="Estimated Reading" required>
+            </input>
+        </p>
+        <p>
+            <label for="estimated_bill">Estimated Bill</label>
+            <input type="number" name="estimated_bill"
+                   value={{ bill.estimated_bill }}
+                   placeholder="Estimated Bill" step="0.01" min="0"  required>
+            </input>
+        </p>
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+    <br>
+    <hr>
+    <div>
+        <p> <a href="/bills"> Back</a></p>
+    </div>
+    <hr> <br>
+    <p>
+        <a href="{{ url_for('delete', bill_id=bill.id) }}">Delete</a>
+    </p>
+{% endblock %}
+

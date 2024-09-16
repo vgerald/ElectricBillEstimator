@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %} {{ bill.id }} {% endblock %}</h1>
+    </span>
+    <div class="content">
+            <div class="bill">
+                <p><b>#{{ bill.id }}</b></p>
+                <b>
+                    <p class="name">{{ bill.id }} </p>
+                </b>
+                <p>{{ bill.bill_date }}</p>
+                <p>{{ bill.bill_reading }}</p>
+                <p>{{ bill.meter_date }}</p>
+                <p>{{ bill.meter_reading }}</p>
+                <p>{{ bill.estimated_reading }}</p>
+                <p>{{ bill.estimated_bill }}</p>
+            </div>
+    </div>
+    <div>
+        <p> <a href="/bills"> Back</a></p>
+    </div>
+    <hr>
+    <div>
+        <p>
+            <a href="{{ url_for('delete', bill_id=bill.id) }}">Delete</a>
+        </p>
+    </div>
+
+
+{% endblock %}

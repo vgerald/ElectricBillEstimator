@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="width: 100%">{% block title %} Add a New Reading {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="id">Identity</label>
+            <input type="number" name="id"
+                   value={{ next_id }} readonly>
+            </input>
+        </p>
+        <p>
+            <label for="bill_date">Bill Date</label>
+            <input type="date" name="bill_date"
+                   placeholder="Bill Date" required>
+            </input>
+        </p>
+        <p>
+            <label for="bill_reading">Bill Reading</label>
+            <input type="number" name="bill_reading"
+                   placeholder="Bill Reading" required>
+            </input>
+        </p>
+        <p>
+            <label for="meter_date">Meter Date</label>
+            <input type="date" name="meter_date"
+                   placeholder="Meter Date" required>
+            </input>
+        </p>
+        <p>
+            <label for="meter_reading">Meter Reading</label>
+            <input type="number" name="meter_reading"
+                   placeholder="Meter Reading" required>
+            </input>
+        </p>
+        <!--
+        <p>
+            <label for="estimated_reading">Estimated Reading</label>
+            <input type="number" name="estimated_reading"
+                   placeholder="Estimated Reading">
+            </input>
+        </p>
+        <p>
+            <label for="estimated_bill">Estimated Bill</label>
+            <input type="number" name="estimated_bill"
+                   placeholder="Estimated Bill" step="0.01" min="0">
+            </input>
+        </p>
+        -->
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}
